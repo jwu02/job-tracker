@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Job Tracker',
   description: 'Job Tracker is an app for tracking your job applications across different platforms, all centralized in one place.',
   icons: {
-    icon: '/assets/images/logo.svg'
+    icon: '/vercel.svg'
   }
 }
 

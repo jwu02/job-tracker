@@ -35,7 +35,10 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 # Dependencies
 - npm install @clerk/nextjs
+    - note latest version does not work with `authMiddleware`, transfer over to `clerkMiddleware` later
+- npm install svix
+    - for Clerk webhooks
 - npm install mongoose mongodb
+    - configure "Network Access" to allow IP access from anywhere for testing on local server
