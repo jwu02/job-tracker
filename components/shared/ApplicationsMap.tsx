@@ -47,7 +47,7 @@ const ApplicationsMap = ({
         setSelectedApplication={setSelectedApplication} 
       />
 
-      <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}>
+      <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
         <Map
           mapId={'bf51a910020fa25a'}
           defaultCenter={clientPos}
