@@ -9,7 +9,7 @@ const Footer = () => {
           JobTracker
         </Link>
 
-        <p>2024 Evently. All Rights reserved.</p>
+        <p>2024 JobTracker. All Rights reserved.</p>
       </div>
     </footer>
   )

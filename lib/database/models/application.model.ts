@@ -1,16 +1,18 @@
+import { ApplicationStatuses } from "@/constants";
 import { Document, Schema, model, models } from "mongoose";
 
 export interface IApplication extends Document {
   _id: string;
   title: string;
-  status: string;
-  notes?: string;
-  jobPostingUrl?: string;
-  latitude?: number;
-  longitude?: number;
-  coverLetter?: string;
+  status: ApplicationStatuses;
+  notes: string;
+  jobPostingUrl: string;
+  latitude: number;
+  longitude: number;
+  isRemote: boolean;
+  coverLetter: string;
+  isFavourited: boolean;
   updatedAt: Date;
-  user: { _id: string }
 }
 
 const ApplicationSchema = new Schema({
@@ -20,7 +22,9 @@ const ApplicationSchema = new Schema({
   jobPostingUrl: { type: String },
   latitude: { type: Number },
   longitude: { type: Number },
+  isRemote: { type: Boolean },
   coverLetter: { type: String },
+  isFavourited: { type: Boolean },
   updatedAt: { type: Date, default: Date.now },
   user: { type: Schema.Types.ObjectId, ref: 'User' },
 })
