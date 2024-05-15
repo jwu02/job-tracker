@@ -206,7 +206,7 @@ const ApplicationForm = ({ userId, type, application, applicationId }: Applicati
         <div className="flex flex-col gap-5">
           <p>Click anywhere on the map below to mark the work location</p>
 
-          <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}>
+          <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}>
             <Map
               style={{width: '100%', height: '50vh'}}
               defaultCenter={clientPos}
