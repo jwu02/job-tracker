@@ -9,14 +9,14 @@ import { applicationFormSchema } from "@/lib/validator"
 import * as z from 'zod'
 import { ApplicationStatuses, applicationDefaultValues } from "@/constants"
 import { Textarea } from "@/components/ui/textarea"
-import { useEffect, useState } from "react"
+import React, { ChangeEvent, useEffect, useState } from "react"
 
 import { useRouter } from "next/navigation"
 import { createApplication, updateApplication } from "@/lib/actions/application.actions"
 import { IApplication } from "@/lib/database/models/application.model"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-import { APIProvider, Map, Marker } from '@vis.gl/react-google-maps';
+import { APIProvider, Map, MapMouseEvent, Marker } from '@vis.gl/react-google-maps';
 import { Checkbox } from "../ui/checkbox"
 
 type ApplicationFormProps = {
@@ -107,11 +107,11 @@ const ApplicationForm = ({ userId, type, application, applicationId }: Applicati
     }
   },[])
 
-  const onMapClick = (e) => {
+  const onMapClick = (e: MapMouseEvent) => {
     console.log(e)
     setMarkerPos({
-      lat: e.detail.latLng.lat,
-      lng: e.detail.latLng.lng
+      lat: e.detail.latLng!.lat,
+      lng: e.detail.latLng!.lng
     })
   }
 
